@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import CharacterCard from './CharacterCard';
 
-const prepareStateFromWord = word => {
+const prepareStateFromWord = given_word => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
     return {
