@@ -1,8 +1,12 @@
 import React from 'react';
+import Card from './Card.js';
 
 function Board(){
     return(
-        <div>test</div>
+        <>
+        <Card />
+        <Card />
+        </>
     )
 }
 
