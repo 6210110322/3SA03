@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import WordCard from './WordCard';
-
-const word = "Hello";
+import Board from './Board.js';
 
 function App() {
   return (
-    <div>
-      <WordCard value={word}/>
+    <div className="App">
+      <header className="App-header">
+        How about your memory? 🧠
+        <Board />
+      </header>
     </div>
   );
 }
