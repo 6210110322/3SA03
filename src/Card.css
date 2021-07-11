@@ -1,10 +1,17 @@
 .Card{
-    border: #FF6863;
+    border: #FF8886;
     border-style: solid;
-    background-color: #FF6863;
+    background-color: #FF8886;
+    font-size: 60px;
     height: 100px;
     width: 100px;
     border-radius: 5px;
     margin: 5px;
     float: left;
+}
+
+.Card.face-up{
+    border: #FF6863;
+    border-style: solid;
+    background-color: #FF6863;
 }
