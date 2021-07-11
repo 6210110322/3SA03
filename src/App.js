@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         How about your memory? 🧠
-        <Board />
       </header>
+      <Board />
     </div>
   );
 }
