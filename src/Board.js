@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from './Card.js';
-import './Board.css'
 
 class Board extends React.Component{
     constructor(props){
@@ -25,10 +24,11 @@ class Board extends React.Component{
         }})
         this.state = {
             deck: deck,
+            firstCard: null,
         }
     }
 
-    flip(cardIndex){
+    flipCardTo(cardIndex, faceUp){
         this.setState({
             deck: this.state.deck.map((f, i) => {
                 if(i === cardIndex){
@@ -43,7 +43,30 @@ class Board extends React.Component{
         })
     }
 
+    flip(cardIndex){
+        if(this.state.firstCard === null){
+            this.setState({firstCard: cardIndex});
+
+        }else{
+            const firstCardContent = this.state.deck[this.state.firstCard].content;
+            const secondCardContent = this.state.deck[cardIndex].content;
+            if(firstCardContent === secondCardContent){
+                this.setState({firstCard: null});
+            }else{
+                setTimeout(() => {
+                    this.flipCardTo(this.state.firstCard, false)
+                    this.flipCardTo(cardIndex, false)
+                    this.setState({firstCard: null});
+                }, 1000)
+            }
+        }
+
+        this.flipCardTo(cardIndex, this.state.deck[cardIndex].faceUp)
+
+    }
+
     render(){
+        console.log(this.state.firstCard);
         return(
             this.state.deck.map((f, i) => {
                 return(
